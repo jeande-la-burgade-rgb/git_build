@@ -1,10 +1,4 @@
-﻿namespace git_build
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
-    }
-}
+﻿using git_build.Logic;
+
+var service = new NumService();
+Console.WriteLine(service.GetProcessedNumber());

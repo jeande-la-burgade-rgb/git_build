@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="git_build.Data/git_build.Data.csproj" Id="7701393d-6e7f-4ff3-ba99-ee92a54ce734" />
+  <Project Path="git_build.Logic/git_build.Logic.csproj" Id="32bf183d-4202-439c-a622-bb735b7bb5c8" />
+  <Project Path="git_build.Tests/git_build.Tests.csproj" Id="7f7ee4e9-f9d6-431f-a4e7-69c9c81d18f4" />
   <Project Path="git_build/git_build.csproj" />
 </Solution>
