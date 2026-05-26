@@ -8,5 +8,6 @@ namespace git_build.Data
         Dictionary<string, Books_in_store> Catalog { get; }
         List<Lib_event> Events { get; }
         Current_state State { get; }
+        IEnumerable<Books_in_store> GetBooks();
     }
 }
