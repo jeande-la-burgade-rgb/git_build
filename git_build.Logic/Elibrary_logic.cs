@@ -1,5 +1,4 @@
-﻿using git_build.Data;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace git_build.Logic
 {
@@ -7,6 +6,7 @@ namespace git_build.Logic
     {
         void BorrowBook(string userId, string isbn);
         void ReturnBook(string userId, string isbn);
-        IEnumerable<Books_in_store> GetBooks();
+
+        IEnumerable<BookIntel> GetBooks();
     }
 }

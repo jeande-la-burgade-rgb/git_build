@@ -12,8 +12,4 @@
     <ProjectReference Include="..\git_build.Logic\git_build.Logic.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mods\" />
-  </ItemGroup>
-
 </Project>

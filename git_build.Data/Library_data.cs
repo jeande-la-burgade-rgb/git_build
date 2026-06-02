@@ -12,21 +12,27 @@ namespace git_build.Data
         public Current_state State { get; } = new Current_state();
         public IEnumerable<Books_in_store> GetBooks()
         {
-            using (var db = new LibDbContext())
-            {
-                return db.Books.ToList();
-            }
+            return GetBooksMethodSyntax();
+        }
+        public IEnumerable<Books_in_store> GetBooksMethodSyntax()
+        {
+            using var db = new LibDbContext();
+
+            return db.Books
+                     .Where(b => !string.IsNullOrEmpty(b.Title))
+                     .OrderBy(b => b.Title)
+                     .ToList();
         }
         public IEnumerable<Books_in_store> GetBooksQuerySyntax()
         {
-            using (var db = new LibDbContext())
-            {
-                var books =
-                    from b in db.Books
-                    select b;
+            using var db = new LibDbContext();
 
-                return books.ToList();
-            }
+            var books =
+                from b in db.Books
+                orderby b.Title
+                select b;
+
+            return books.ToList();
         }
     }
 }

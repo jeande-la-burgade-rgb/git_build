@@ -6,11 +6,11 @@ namespace git_build.Tests
 {
     public class FakeLogic : Elibrary_logic
     {
-        public IEnumerable<Books_in_store> GetBooks()
+        public IEnumerable<BookIntel> GetBooks()
         {
-            return new List<Books_in_store>
+            return new List<BookIntel>
             {
-                new Books_in_store
+                new BookIntel
                 {
                     ISBN = "123",
                     Title = "Test Book"

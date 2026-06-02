@@ -43,9 +43,14 @@ namespace git_build.Logic
                 Timestamp = DateTime.Now
             });
         }
-        public IEnumerable<Books_in_store> GetBooks()
+        public IEnumerable<BookIntel> GetBooks()
         {
-            return data.GetBooks();
+            return data.GetBooks()
+                       .Select(b => new BookIntel
+                       {
+                           ISBN = b.ISBN,
+                           Title = b.Title
+                       });
         }
     }
 }

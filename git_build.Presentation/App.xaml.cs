@@ -1,7 +1,9 @@
 ﻿using git_build.Data;
 using git_build.Data.Database;
-using System.Windows;
+using git_build.Logic;
+using git_build.Presentation.ViewModels;
 using System.Linq;
+using System.Windows;
 
 namespace git_build.Presentation
 {
@@ -35,8 +37,14 @@ namespace git_build.Presentation
 
                     // DEBUG CHECK
                     var canConnect = db.Database.CanConnect();
-                    MessageBox.Show($"DB created / connection: {canConnect}");
                 }
+
+                Elibrary_data data = new Library_data();
+                Elibrary_logic logic = new Library_logic(data);
+                var vm = new LibViewMod(logic);
+
+                var window = new Views.MainWindow(vm);
+                window.Show();
             }
             catch (Exception ex)
             {
