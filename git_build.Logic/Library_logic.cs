@@ -7,6 +7,10 @@ namespace git_build.Logic
     {
         private readonly Elibrary_data data;
 
+        public Library_logic()
+        {
+            data = new Library_data();
+        }
         public Library_logic(Elibrary_data data)
         {
             this.data = data;
